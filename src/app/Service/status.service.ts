@@ -2,13 +2,14 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from "rxjs/operators";
+import { environment } from 'src/environments/environment';
 import { IStatus } from '../Model/Status';
 
 @Injectable({
   providedIn: 'root'
 })
 export class StatusService {
-  private url = "http://localhost:8080/status";
+  private url = environment.hostUrl + "status";
 
   constructor(private http: HttpClient) { }
 

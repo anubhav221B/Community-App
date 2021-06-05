@@ -2,6 +2,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 import { IResponse } from '../Model/Response';
 import { IUser } from '../Model/User';
 
@@ -9,7 +10,7 @@ import { IUser } from '../Model/User';
   providedIn: 'root'
 })
 export class UserService {
-  private url = "http://localhost:8080/";
+  private url = environment.hostUrl;
   private loginStatus = new BehaviorSubject<boolean>(this.checkLoginStatus());
   private u = JSON.parse(localStorage.getItem('user'));
   private user = new BehaviorSubject<string>(this.u?this.u.fName:null);

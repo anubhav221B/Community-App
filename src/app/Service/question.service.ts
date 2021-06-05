@@ -3,13 +3,14 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 import { IQuestion } from '../Model/Question';
 
 @Injectable({
   providedIn: 'root'
 })
 export class QuestionService {
-  private url = "http://localhost:8080/questions";
+  private url = environment.hostUrl + "questions";
 
   constructor(private http: HttpClient) { }
 
