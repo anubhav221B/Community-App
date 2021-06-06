@@ -11,15 +11,15 @@ import { SearchResultComponent } from './search-result/search-result.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 
 const routes: Routes = [
-  { path: "posts/search", component: SearchResultComponent, canActivate: [AuthGuard] },
-  { path: "posts/reply/:id", component: NewReplyComponent, canActivate: [AuthGuard] },
-  { path: "posts/:id", component: PostDetailsComponent, canActivate: [AuthGuard] },
-  { path: "myPost", component: PostListComponent, canActivate: [AuthGuard] },
-  { path: "newPost", component: NewPostComponent, canActivate: [AuthGuard] },
-  { path: "register", component: RegisterComponent },
-  { path: "login", component: LoginComponent },
-  { path: "welcome", component: WelcomeComponent },
-  { path: "", redirectTo: "welcome", pathMatch: "full" },
+  { path: "/posts/search", component: SearchResultComponent, canActivate: [AuthGuard] },
+  { path: "/posts/reply/:id", component: NewReplyComponent, canActivate: [AuthGuard] },
+  { path: "/posts/:id", component: PostDetailsComponent, canActivate: [AuthGuard] },
+  { path: "/myPost", component: PostListComponent, canActivate: [AuthGuard] },
+  { path: "/newPost", component: NewPostComponent, canActivate: [AuthGuard] },
+  { path: "/register", component: RegisterComponent },
+  { path: "/login", component: LoginComponent },
+  { path: "/welcome", component: WelcomeComponent },
+  { path: "/", redirectTo: "welcome", pathMatch: "full" },
   { path: "**", redirectTo: "welcome", pathMatch: "full" }
 ];
 
