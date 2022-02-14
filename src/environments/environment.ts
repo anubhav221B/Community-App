@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  hostUrl: "https://communityserver.herokuapp.com/"
+  hostUrl: "http://localhost:8080/"
 };
 
 /*
